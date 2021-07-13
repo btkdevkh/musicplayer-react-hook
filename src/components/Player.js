@@ -19,11 +19,8 @@ class Player extends Component {
     getAllSongs()
       .then((res) => {
         // console.log(res);
-        // this.setState({ songs: res.songs })
-
-        // Php testing
         this.setState({ songs: res })
-        this.play();
+        // this.play();
 
         // Select an element by using ref
         this.myRefAudio.current.addEventListener('timeupdate', this.updateProgressBar);
@@ -208,4 +205,4 @@ class Player extends Component {
   }
 }
 
-export default Player
+export default Player;

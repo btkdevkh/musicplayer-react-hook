@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bokor&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap');
 
 :root {
   --prim-color: #454648;
@@ -12,7 +12,8 @@
   box-sizing: border-box;
 }
 body {
-  font-family: 'Bokor', cursive;
+  font-size: 1.3em;
+  font-family: 'Zen Loop', cursive;
   background-color: #20232a;
 }
 li {
@@ -59,8 +60,8 @@ header {
   margin-bottom: 25px;
 }
 .cover {
-  width: 200px;
-  height: 200px;
+  width: 270px;
+  height: 270px;
   margin: auto;
   border-radius: 50%;
   position: relative;
@@ -72,16 +73,16 @@ header {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 15px;
-  height: 15px;
-  background-color: #000;
+  width: 20px;
+  height: 20px;
+  background-color: #272323;
   border-radius: 50%;
   z-index: 1;
-  border: 2px solid var(--secnd-color);
+  border: 3px solid var(--secnd-color);
 }
 .cover img {
-  width: 200px;
-  height: 200px;
+  width: 270px;
+  height: 270px;
   border-radius: 50%;
   object-fit: cover;
 }

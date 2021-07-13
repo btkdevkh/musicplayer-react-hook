@@ -2,15 +2,13 @@ import axios from 'axios';
 import { config } from '../config';
 
 export const getAllSongs = () => {
-  // return axios.get(config.api_url+'/api/v1/songs/all')
-  //       .then(res => res.data)
-
-  // Api PHP testing
+  // Api PHP
   return axios.get(config.api_url+'/api/songs/all')
     .then(res => {
       // console.log(res);
       return res.data
     })
+    .catch(err => err)
 }
 
 export const savePict = (file) => {
@@ -27,6 +25,7 @@ export const savePict = (file) => {
     }
   })
   .then(res => res.data)
+  .catch(err => err)
 }
 
 export const saveSong = (file) => {
@@ -43,4 +42,5 @@ export const saveSong = (file) => {
     }
   })
   .then(res => res.data)
+  .catch(err => err)
 }
