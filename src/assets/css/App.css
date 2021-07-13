@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Bokor&display=swap');
+
+:root {
+  --prim-color: #454648;
+  --secnd-color: #dbdcde;
+}
+
+/* General styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Bokor', cursive;
+  background-color: #20232a;
+}
+li {
+  list-style-type: none;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+/* Principal header */
+header {
+  text-align: center;
+  padding: 10px;
+  background-color: #20232a;
+}
+.fa-headphones-alt {
+  font-size: 48px;
+  color: goldenrod;
+}
+
+/* Main bg */
+.main-bg {
+  background: url('../img/bg.jpg') no-repeat center center / cover;
+  height: 500px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.music-container {
+  width: 350px;
+  position: relative;
+  border-radius: 3px;
+}
+.music-info h5 {
+  margin-bottom: 25px;
+}
+.cover {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 5px 10px rgb(88, 82, 84);
+}
+.cover::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 15px;
+  height: 15px;
+  background-color: #000;
+  border-radius: 50%;
+  z-index: 1;
+  border: 2px solid var(--secnd-color);
+}
+.cover img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.music-info.play .cover {
+  animation: spin 5s linear infinite;
+}
+.btn-controls {
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-controls button {
+ padding: 15px;
+ margin: 0 2px;
+ border: 0;
+ cursor: pointer;
+ border-radius: 5px;
+ background: none;
+}
+.btn-controls button:focus {
+  outline: 0;
+}
+.btn-controls button i {
+  color: #20232a;
+}
+.btn-controls button {
+  outline: 0;
+}
+
+
+.progress-bar.play {
+  width: 200px;
+  height: 5px;
+  margin: auto;
+  border-radius: 3px;
+  background-color: var(--secnd-color);
+  cursor: pointer;
+}
+.bar-in-progress.play {
+  height: 5px;
+  border-radius: 3px;
+}
+.title {
+  transition: ease-in-out 0.5s;
+}
+
+footer {
+  font-weight: bold;
+  padding: 25px;
+  text-align: center;
+  color: var(--secnd-color);
+  background-color: #20232a;
+}
+footer hr {
+  width: 50px;
+  height: 2px;
+  background-color: goldenrod;
+  margin: auto;
+  border: none;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
