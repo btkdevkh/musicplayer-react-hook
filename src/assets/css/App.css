@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Georama:wght@200;300;400&display=swap');
 
 :root {
   --prim-color: #454648;
@@ -12,8 +12,11 @@
   box-sizing: border-box;
 }
 body {
+  min-width: 320px;
   font-size: 1.3em;
-  font-family: 'Zen Loop', cursive;
+  font-weight: 300;
+  line-height: 1.4;
+  font-family: 'Georama', sans-serif;
   background-color: #20232a;
 }
 li {
@@ -45,21 +48,37 @@ header {
 /* Main bg */
 .main-bg {
   background: url('../img/bg.jpg') no-repeat center center / cover;
-  height: 500px;
+  height: 600px;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.music-container {
-  width: 350px;
+.music-container, .music-fake {
+  min-width: 315px;
+  width: 100%;
+  max-width: 400px;
+  height: 597px;
+  padding: 30px 15px;
+  margin: 2px;
   position: relative;
-  border-radius: 3px;
+  /* border-radius: 3px;
+  background-color: rgba(255, 255, 255, .15);
+  backdrop-filter: blur(5px);
+  box-shadow: inset 0 0 5px rgba(0,0,0,.5); */
+}
+.music-fake {
+  display: none;
+}
+.music-info h3 {
+  font-weight: 400;
 }
 .music-info h5 {
+  font-weight: 300;
   margin-bottom: 25px;
 }
-.cover {
+.cover,
+.music-fake .cover {
   width: 270px;
   height: 270px;
   margin: auto;
@@ -67,7 +86,8 @@ header {
   position: relative;
   box-shadow: 0 5px 10px rgb(88, 82, 84);
 }
-.cover::before {
+.cover::before,
+.music-fake .cover::before {
   content: '';
   position: absolute;
   top: 50%;
@@ -75,12 +95,13 @@ header {
   transform: translate(-50%, -50%);
   width: 20px;
   height: 20px;
-  background-color: #272323;
+  background-color: #111;
   border-radius: 50%;
   z-index: 1;
   border: 3px solid var(--secnd-color);
 }
-.cover img {
+.cover img,
+.music-fake .cover img {
   width: 270px;
   height: 270px;
   border-radius: 50%;
@@ -90,7 +111,7 @@ header {
   animation: spin 5s linear infinite;
 }
 .btn-controls {
-  margin: 15px 0;
+  margin: 15px 0 0 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -112,8 +133,6 @@ header {
 .btn-controls button {
   outline: 0;
 }
-
-
 .progress-bar.play {
   width: 200px;
   height: 5px;
@@ -130,15 +149,67 @@ header {
   transition: ease-in-out 0.5s;
 }
 
+.repeat {
+  position: relative;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.repeat button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  margin: 10px 15px 20px 15px;
+}
+.vol {
+  position: relative;
+}
+.vol .volBar {
+  position: absolute;
+  top: 50%;
+  left: 24px;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 4px;
+  border-radius: 3px;
+  background: palevioletred;
+  cursor: pointer;
+}
+/* .vol .volBar.active {
+  display: inline;
+} */
+.repeat .fa-redo {
+  font-size: 18px;
+}
+.repeat .fa-random,
+.fa-volume-up,
+.fa-volume-off {
+  font-size: 20px;
+}
+.repeat .fa-redo.repeat,
+.repeat .fa-random.shuffle {
+  color: palevioletred;
+}
+.fa-backward,
+.fa-forward,
+.fa-play,
+.fa-pause {
+  font-size: 22px;
+  padding: 10px;
+}
 footer {
-  font-weight: bold;
   padding: 25px;
-  text-align: center;
+  text-align: justify;
   color: var(--secnd-color);
   background-color: #20232a;
+  font-size: 1.1rem;
+}
+footer div p {
+  margin: 10px 0;
+  text-align: center;
 }
 footer hr {
-  width: 50px;
+  width: 100px;
   height: 2px;
   background-color: goldenrod;
   margin: auto;
@@ -149,4 +220,33 @@ footer hr {
   100% {
     transform: rotate(360deg);
   }
+}
+
+@media screen and (min-width: 500px) {
+  footer div {
+    max-width: 500px;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 1015px) {
+  /***************** Fake cover **************/
+  .music-fake {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .music-fake .cover {
+    width: 200px;
+    height: 200px;
+  }
+  .music-fake .cover img {
+    width: 200px;
+    height: 200px;
+  }
+  .music-fake .cover::before {
+    width: 15px;
+    height: 15px;
+  }
+  /*******************************************/
 }

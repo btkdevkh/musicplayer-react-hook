@@ -1,17 +1,15 @@
-import React, { Component } from 'react';
-
-class Footer extends Component {
-  render() {
-    return (
-      <footer>
-        <small>This music player is combined with react & php api.</small>
+const Footer = () => {
+  return (
+    <footer>
+      <div>
+        <p>Hi, I'm your music player</p>
         <hr />
-        <p><small>It's still in development mode, but you can listent to the music, just hit play & relax, anyway.</small></p>
-        <p style={{marginTop: "10px"}}><small>I developed this application for myself & everyone who got messies with their journey after work and just want to listen some songs.</small></p>
+        <p><small>😎 Hit play & Relax 😎</small></p>
+        <p style={{marginTop: "10px"}}><small>App Version 1.0.1</small></p>
         <p><small>Thanks, <a style={{color: "goldenrod"}} href="https://btkdevkh.com" target="_blank" rel="noreferrer">Btkdevkh</a></small></p>
-      </footer>
-    )
-  }
+      </div>
+    </footer>
+  )
 }
 
 export default Footer;
